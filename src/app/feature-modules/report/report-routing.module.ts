@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReportComponent } from './components/report/report.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./feature-modules/report/report.module').then(
-        (m) => m.ReportModule
-      ),
+    component: ReportComponent,
   },
   {
     path: '**',
@@ -20,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class ReportRoutingModule {}
